@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +7,7 @@
 <title>Fête Chevallier - Album Panini</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -45,9 +45,10 @@ h2 {
     color: #777;
 }
 
-/* =========================
+
+/* ============================================================
    NAVIGATION
-========================= */
+============================================================ */
 
 .navigation {
     display: flex;
@@ -79,9 +80,10 @@ h2 {
     color: white;
 }
 
-/* =========================
+
+/* ============================================================
    BOUTONS RETOUR
-========================= */
+============================================================ */
 
 .back-button {
     display: block;
@@ -99,9 +101,10 @@ h2 {
     background: #333;
 }
 
-/* =========================
+
+/* ============================================================
    PAGE D'ACCUEIL
-========================= */
+============================================================ */
 
 .home-families {
     display: grid;
@@ -139,9 +142,10 @@ h2 {
     background: #f5f5f5;
 }
 
-/* =========================
+
+/* ============================================================
    LISTE DES FAMILLES
-========================= */
+============================================================ */
 
 .family-selection {
     display: grid;
@@ -168,9 +172,10 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* =========================
+
+/* ============================================================
    PHOTOS
-========================= */
+============================================================ */
 
 .photos {
     display: grid;
@@ -188,9 +193,13 @@ h2 {
     overflow: hidden;
 }
 
-/* =========================
-   PHOTO DECOUVERTE
-========================= */
+
+/* ============================================================
+   PHOTO VERROUILLEE
+   IMPORTANT :
+   Ce n'est PAS un bouton.
+   Il n'y a donc AUCUN clic possible.
+============================================================ */
 
 .discover-card {
     width: 100%;
@@ -198,21 +207,27 @@ h2 {
     border: none;
     border-radius: 8px;
     background: linear-gradient(135deg, #ddd, #f7f7f7);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+
     color: #555;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
     padding: 20px;
-    transition: 0.2s;
+
+    cursor: default;
+    user-select: none;
 }
 
+
+/* Pas de hover sur une photo verrouillée */
+
 .discover-card:hover {
-    transform: scale(1.01);
-    background: linear-gradient(135deg, #d3d3d3, #f0f0f0);
+    transform: none;
+    background: linear-gradient(135deg, #ddd, #f7f7f7);
 }
 
 .discover-inner {
@@ -232,9 +247,10 @@ h2 {
     line-height: 1.3;
 }
 
-/* =========================
+
+/* ============================================================
    PHOTO REVELEE
-========================= */
+============================================================ */
 
 .revealed-image {
     width: 100%;
@@ -243,11 +259,18 @@ h2 {
     display: block;
     border-radius: 8px;
     background: #f5f5f5;
+
+    /*
+       IMPORTANT :
+       aucune interaction avec l'image
+    */
+    pointer-events: none;
 }
 
-/* =========================
+
+/* ============================================================
    NOM PHOTO
-========================= */
+============================================================ */
 
 .photo-name {
     margin-top: 12px;
@@ -255,25 +278,29 @@ h2 {
     font-size: 17px;
 }
 
-/* =========================
+
+/* ============================================================
    PHOTO MANQUANTE
-========================= */
+============================================================ */
 
 .image-error {
     height: 320px;
     background: #eee;
     border-radius: 8px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 20px;
     color: #888;
 }
 
-/* =========================
+
+/* ============================================================
    MOBILE
-========================= */
+============================================================ */
 
 @media (max-width: 700px) {
 
@@ -315,6 +342,7 @@ h2 {
         flex-direction: column;
     }
 }
+
 </style>
 </head>
 
@@ -326,16 +354,18 @@ h2 {
 
 <script>
 
+
 /* ============================================================
    DOSSIER DES PHOTOS
 ============================================================ */
 
 const PHOTO_FOLDER = "photos/";
 
-/*
-   Toutes les découvertes sont enregistrées dans le navigateur.
-   Chaque photo possède une clé unique.
-*/
+
+/* ============================================================
+   MEMOIRE DES PHOTOS DECOUVERTES
+============================================================ */
+
 const STORAGE_PREFIX = "chevallier_album_photo_";
 
 
@@ -347,7 +377,7 @@ const album = {
 
     /* ========================================================
        PAGE D'ACCUEIL
-       Ces deux photos sont TOUJOURS visibles.
+       CES DEUX PHOTOS SONT TOUJOURS VISIBLES
     ======================================================== */
 
     home: {
@@ -802,34 +832,67 @@ const app = document.getElementById("app");
 ============================================================ */
 
 /*
-   Renvoie une clé unique pour chaque photo.
+   Nouvelle clé unique :
+
+   branche + famille + personne + numéro de photo
+
+   Exemple :
+
+   chevallier_album_photo_deniseRaymond_raymonde_philippe_0
 */
 
-function getPhotoKey(personId, photoIndex) {
-    return STORAGE_PREFIX + personId + "_" + photoIndex;
+function getPhotoKey(branchId, familyId, personId, photoIndex) {
+
+    return (
+        STORAGE_PREFIX +
+        branchId + "_" +
+        familyId + "_" +
+        personId + "_" +
+        photoIndex
+    );
 }
 
 
-/*
-   Vérifie si une photo a déjà été découverte.
-*/
+/* ============================================================
+   VERIFIER SI UNE PHOTO EST DECOUVERTE
+============================================================ */
 
-function isPhotoDiscovered(personId, photoIndex) {
+function isPhotoDiscovered(
+    branchId,
+    familyId,
+    personId,
+    photoIndex
+) {
 
     return localStorage.getItem(
-        getPhotoKey(personId, photoIndex)
+        getPhotoKey(
+            branchId,
+            familyId,
+            personId,
+            photoIndex
+        )
     ) === "true";
 }
 
 
-/*
-   Enregistre la découverte d'une photo.
-*/
+/* ============================================================
+   ENREGISTRER UNE PHOTO DECOUVERTE
+============================================================ */
 
-function markPhotoDiscovered(personId, photoIndex) {
+function markPhotoDiscovered(
+    branchId,
+    familyId,
+    personId,
+    photoIndex
+) {
 
     localStorage.setItem(
-        getPhotoKey(personId, photoIndex),
+        getPhotoKey(
+            branchId,
+            familyId,
+            personId,
+            photoIndex
+        ),
         "true"
     );
 }
@@ -851,8 +914,10 @@ function showHome() {
 
         <div class="home-families">
 
-            <div class="home-card"
-                 onclick="showFamilyList('deniseRaymond')">
+            <div
+                class="home-card"
+                onclick="showFamilyList('deniseRaymond')"
+            >
 
                 <img
                     src="${PHOTO_FOLDER}${album.home.left.image}"
@@ -865,8 +930,10 @@ function showHome() {
             </div>
 
 
-            <div class="home-card"
-                 onclick="showFamilyList('paulettePaul')">
+            <div
+                class="home-card"
+                onclick="showFamilyList('paulettePaul')"
+            >
 
                 <img
                     src="${PHOTO_FOLDER}${album.home.right.image}"
@@ -891,9 +958,17 @@ function showFamilyList(branchId) {
 
     const branch = album[branchId];
 
+    if (!branch) {
+        showHome();
+        return;
+    }
+
     let html = `
 
-        <button class="back-button" onclick="showHome()">
+        <button
+            class="back-button"
+            onclick="showHome()"
+        >
             ← Retour
         </button>
 
@@ -906,19 +981,27 @@ function showFamilyList(branchId) {
         <div class="family-selection">
     `;
 
+
     branch.families.forEach(family => {
 
         html += `
+
             <button
                 class="family-button"
-                onclick="showFamily('${branchId}', '${family.id}')">
+                onclick="showFamily(
+                    '${branchId}',
+                    '${family.id}'
+                )"
+            >
 
                 ${family.name}
 
             </button>
+
         `;
 
     });
+
 
     html += `</div>`;
 
@@ -930,27 +1013,38 @@ function showFamilyList(branchId) {
    AFFICHAGE D'UNE FAMILLE
 ============================================================ */
 
-function showFamily(branchId, familyId, personId = null) {
+function showFamily(
+    branchId,
+    familyId,
+    personId = null
+) {
 
     const branch = album[branchId];
+
+    if (!branch) {
+        showHome();
+        return;
+    }
+
 
     const family = branch.families.find(
         item => item.id === familyId
     );
+
 
     if (!family) {
         showHome();
         return;
     }
 
+
     let html = `
 
         <button
             class="back-button"
-            onclick="showFamilyList('${branchId}')">
-
+            onclick="showFamilyList('${branchId}')"
+        >
             ← Retour aux familles
-
         </button>
 
         <h1>${family.name}</h1>
@@ -958,7 +1052,8 @@ function showFamily(branchId, familyId, personId = null) {
         <div class="navigation">
     `;
 
-    family.people.forEach((person) => {
+
+    family.people.forEach(person => {
 
         html += `
 
@@ -969,7 +1064,8 @@ function showFamily(branchId, familyId, personId = null) {
                     '${branchId}',
                     '${familyId}',
                     '${person.id}'
-                )">
+                )"
+            >
 
                 ${person.name}
 
@@ -979,13 +1075,16 @@ function showFamily(branchId, familyId, personId = null) {
 
     });
 
+
     html += `</div>`;
 
     html += `<div id="personContent"></div>`;
 
     app.innerHTML = html;
 
+
     let selectedPersonId = family.people[0].id;
+
 
     if (personId) {
 
@@ -993,10 +1092,12 @@ function showFamily(branchId, familyId, personId = null) {
             person => person.id === personId
         );
 
+
         if (found) {
             selectedPersonId = found.id;
         }
     }
+
 
     showPerson(
         branchId,
@@ -1010,9 +1111,16 @@ function showFamily(branchId, familyId, personId = null) {
    AFFICHAGE D'UNE PERSONNE
 ============================================================ */
 
-function showPerson(branchId, familyId, personId) {
+function showPerson(
+    branchId,
+    familyId,
+    personId
+) {
 
     const branch = album[branchId];
+
+    if (!branch) return;
+
 
     const family = branch.families.find(
         item => item.id === familyId
@@ -1020,13 +1128,17 @@ function showPerson(branchId, familyId, personId) {
 
     if (!family) return;
 
+
     const person = family.people.find(
         item => item.id === personId
     );
 
     if (!person) return;
 
-    const content = document.getElementById("personContent");
+
+    const content = document.getElementById(
+        "personContent"
+    );
 
     if (!content) return;
 
@@ -1036,11 +1148,18 @@ function showPerson(branchId, familyId, personId) {
 
     person.photos.forEach((photo, index) => {
 
+
         const discovered = isPhotoDiscovered(
+            branchId,
+            familyId,
             person.id,
             index
         );
 
+
+        /* ====================================================
+           PHOTO DECOUVERTE
+        ==================================================== */
 
         if (discovered) {
 
@@ -1052,6 +1171,7 @@ function showPerson(branchId, familyId, personId) {
                         class="revealed-image"
                         src="${PHOTO_FOLDER}${photo[1]}"
                         alt="${photo[0]}"
+                        draggable="false"
                         onerror="imageError(this)"
                     >
 
@@ -1063,35 +1183,41 @@ function showPerson(branchId, familyId, personId) {
 
             `;
 
-        } else {
+        }
+
+
+        /* ====================================================
+           PHOTO VERROUILLEE
+
+           IMPORTANT :
+
+           Il n'y a AUCUN onclick ici.
+
+           La photo ne peut donc PAS être découverte
+           en cliquant dessus.
+        ==================================================== */
+
+        else {
 
             html += `
 
                 <div class="photo-card">
 
-                    <button
-                        class="discover-card"
-                        onclick="discoverPhoto(
-                            '${person.id}',
-                            ${index},
-                            '${branchId}',
-                            '${familyId}',
-                            '${person.id}'
-                        )">
+                    <div class="discover-card">
 
-                        <span class="discover-inner">
+                        <div class="discover-inner">
 
-                            <span class="discover-icon">
-                                📷
-                            </span>
+                            <div class="discover-icon">
+                                🔒
+                            </div>
 
-                            <span class="discover-text">
+                            <div class="discover-text">
                                 Photo à découvrir
-                            </span>
+                            </div>
 
-                        </span>
+                        </div>
 
-                    </button>
+                    </div>
 
                     <div class="photo-name">
                         ${index + 1}. ${photo[0]}
@@ -1108,18 +1234,23 @@ function showPerson(branchId, familyId, personId) {
 
     html += `</div>`;
 
+
     content.innerHTML = html;
 
 
-    /* Onglet actif */
+    /* ========================================================
+       ONGLET ACTIF
+    ======================================================== */
 
     document.querySelectorAll(".tab").forEach(
         button => button.classList.remove("active")
     );
 
+
     const activeTab = document.getElementById(
         "tab-" + person.id
     );
+
 
     if (activeTab) {
         activeTab.classList.add("active");
@@ -1128,49 +1259,145 @@ function showPerson(branchId, familyId, personId) {
 
 
 /* ============================================================
-   DECOUVRIR UNE PHOTO
+   TRAITEMENT D'UN QR CODE PHOTO
 ============================================================ */
 
-function discoverPhoto(
-    personId,
-    photoIndex,
-    branchId,
-    familyId,
-    selectedPersonId
-) {
+/*
+   FORMAT DU QR CODE :
 
-    markPhotoDiscovered(
-        personId,
-        photoIndex
-    );
+   #photo=branche|famille|personne|index
 
 
-    /*
-       On réaffiche immédiatement la personne.
-       La photo apparaît et reste mémorisée.
-    */
+   Exemple :
 
-    showPerson(
-        branchId,
-        familyId,
-        selectedPersonId
-    );
-}
+   #photo=deniseRaymond|raymonde|philippe|0
 
+   Cela correspond à :
 
-/* ============================================================
-   LIENS DIRECTS / QR CODES
-============================================================ */
+   Philippe
+   photo n°1
+*/
+
 
 function openDirectLink() {
 
     const hash = window.location.hash.substring(1);
 
+
+    /* ========================================================
+       AUCUN QR CODE
+    ======================================================== */
+
     if (!hash) {
+
         showHome();
+
         return;
     }
 
+
+    /* ========================================================
+       NOUVEAU FORMAT QR PHOTO
+    ======================================================== */
+
+    if (hash.startsWith("photo=")) {
+
+        const data = hash.substring(6);
+
+        const parts = data.split("|");
+
+
+        /*
+           Nous devons avoir exactement :
+
+           0 = branche
+           1 = famille
+           2 = personne
+           3 = numéro photo
+        */
+
+        if (parts.length === 4) {
+
+            const branchId = parts[0];
+            const familyId = parts[1];
+            const personId = parts[2];
+            const photoIndex = parseInt(parts[3], 10);
+
+
+            const branch = album[branchId];
+
+
+            if (branch) {
+
+                const family = branch.families.find(
+                    item => item.id === familyId
+                );
+
+
+                if (family) {
+
+                    const person = family.people.find(
+                        item => item.id === personId
+                    );
+
+
+                    if (
+                        person &&
+                        !isNaN(photoIndex) &&
+                        photoIndex >= 0 &&
+                        photoIndex < person.photos.length
+                    ) {
+
+                        /*
+                           LE QR CODE EST LE SEUL ELEMENT
+                           QUI DEVERROUILLE LA PHOTO.
+                        */
+
+                        markPhotoDiscovered(
+                            branchId,
+                            familyId,
+                            personId,
+                            photoIndex
+                        );
+
+
+                        /*
+                           Affiche directement la personne
+                           et donc la photo scannée.
+                        */
+
+                        showFamily(
+                            branchId,
+                            familyId,
+                            personId
+                        );
+
+
+                        return;
+                    }
+                }
+            }
+        }
+
+
+        /*
+           QR code incorrect
+        */
+
+        showHome();
+
+        return;
+    }
+
+
+    /* ========================================================
+       ANCIENS LIENS DE PERSONNES
+
+       Ils restent compatibles.
+
+       Ils ouvrent simplement la personne,
+       sans débloquer de nouvelle photo.
+    ======================================================== */
 
     const destinations = {
 
@@ -1271,6 +1498,7 @@ function openDirectLink() {
 
         const destination = destinations[hash];
 
+
         showFamily(
             destination[0],
             destination[1],
@@ -1293,9 +1521,11 @@ function imageError(image) {
 
     const fileName = image.getAttribute("src");
 
+
     const div = document.createElement("div");
 
     div.className = "image-error";
+
 
     div.innerHTML = `
         <div>
@@ -1303,6 +1533,7 @@ function imageError(image) {
             ${fileName}
         </div>
     `;
+
 
     image.replaceWith(div);
 }
@@ -1318,4 +1549,3 @@ openDirectLink();
 
 </body>
 </html>
-```
