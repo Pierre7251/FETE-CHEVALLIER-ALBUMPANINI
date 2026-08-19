@@ -10,12 +10,7 @@
 
 <title>Fête Chevallier - Album Panini</title>
 
-
 <style>
-
-/* ============================================================
-   GENERAL
-============================================================ */
 
 * {
     box-sizing: border-box;
@@ -97,17 +92,12 @@ h2 {
 .back-button {
     display: block;
     margin: 0 auto 25px;
-
     border: none;
     background: #555;
     color: white;
-
     padding: 10px 18px;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-size: 15px;
 }
 
@@ -121,61 +111,38 @@ h2 {
 ============================================================ */
 
 .home-families {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-
     max-width: 900px;
-
     margin: 30px auto;
 }
 
 .home-card {
-
     background: white;
-
     border-radius: 15px;
-
     padding: 20px;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.12);
-
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     cursor: pointer;
-
     transition: 0.25s;
-
     text-align: center;
 }
 
 .home-card:hover {
-
     transform: translateY(-5px);
-
-    box-shadow:
-        0 8px 22px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
 .home-card h2 {
-
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
 .home-card img {
-
     width: 100%;
-
     height: 350px;
-
     object-fit: contain;
-
     border-radius: 10px;
-
     background: #f5f5f5;
 }
 
@@ -185,44 +152,27 @@ h2 {
 ============================================================ */
 
 .family-selection {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-
     max-width: 1000px;
-
     margin: 0 auto;
 }
 
 .family-button {
-
     background: white;
-
     border: 2px solid #ddd;
-
     border-radius: 12px;
-
     padding: 20px;
-
     font-size: 18px;
-
     font-weight: bold;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 .family-button:hover {
-
     border-color: #555;
-
     background: #fafafa;
-
     transform: translateY(-2px);
 }
 
@@ -232,49 +182,30 @@ h2 {
 ============================================================ */
 
 .photos {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(260px, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-
     margin-top: 25px;
 }
 
 .photo-card {
-
     background: white;
-
     border-radius: 12px;
-
     padding: 15px;
-
-    box-shadow:
-        0 3px 12px rgba(0,0,0,0.12);
-
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
     text-align: center;
-
     overflow: hidden;
 }
 
 
 /* ============================================================
    PHOTO VERROUILLEE
-   IMPORTANT :
-   CE N'EST PAS UN BOUTON.
-   AUCUN CLIC POSSIBLE.
 ============================================================ */
 
 .discover-card {
-
     width: 100%;
-
     height: 320px;
-
     border: none;
-
     border-radius: 8px;
 
     background:
@@ -285,38 +216,28 @@ h2 {
         );
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     color: #555;
 
     font-size: 22px;
-
     font-weight: bold;
 
     text-align: center;
-
     padding: 20px;
 
     cursor: default;
 
     user-select: none;
-
     pointer-events: none;
 }
 
 .discover-inner {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 12px;
 }
 
@@ -325,9 +246,7 @@ h2 {
 }
 
 .discover-text {
-
     font-size: 20px;
-
     line-height: 1.3;
 }
 
@@ -337,21 +256,14 @@ h2 {
 ============================================================ */
 
 .revealed-image {
-
     width: 100%;
-
     height: 320px;
-
     object-fit: contain;
-
     display: block;
-
     border-radius: 8px;
-
     background: #f5f5f5;
 
     pointer-events: none;
-
     user-select: none;
 }
 
@@ -361,11 +273,8 @@ h2 {
 ============================================================ */
 
 .photo-name {
-
     margin-top: 12px;
-
     font-weight: bold;
-
     font-size: 17px;
 }
 
@@ -375,21 +284,15 @@ h2 {
 ============================================================ */
 
 .image-error {
-
     height: 320px;
-
     background: #eee;
-
     border-radius: 8px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
-
     padding: 20px;
 
     color: #888;
@@ -401,7 +304,6 @@ h2 {
 ============================================================ */
 
 .qr-message {
-
     text-align: center;
 
     margin: 10px auto 20px;
@@ -460,12 +362,10 @@ h2 {
     }
 
     .tab {
-
         width: 100%;
     }
 
     .navigation {
-
         flex-direction: column;
     }
 }
@@ -476,7 +376,6 @@ h2 {
 
 
 <body>
-
 
 <div class="container">
 
@@ -498,20 +397,6 @@ const PHOTO_FOLDER = "photos/";
 /* ============================================================
    MEMOIRE DES ONGLET DECOUVERTS
 ============================================================ */
-
-/*
-   IMPORTANT :
-
-   La mémoire se fait par PERSONNE / ONGLET.
-
-   Exemple :
-
-   chevallier_album_person_anne
-
-   signifie que l'onglet Anne a été découvert.
-
-   Toutes les photos d'Anne sont alors accessibles.
-*/
 
 const STORAGE_PREFIX =
     "chevallier_album_person_";
@@ -577,7 +462,6 @@ deniseRaymond: {
                 "Famille RAYMONDE",
 
             people: [
-
 
                 {
 
@@ -686,7 +570,6 @@ deniseRaymond: {
                 "Famille JACQUELINE",
 
             people: [
-
 
                 {
 
@@ -819,7 +702,6 @@ deniseRaymond: {
                 "Famille COLETTE",
 
             people: [
-
 
                 {
 
@@ -1023,7 +905,6 @@ deniseRaymond: {
 
             people: [
 
-
                 {
 
                     id:
@@ -1182,7 +1063,6 @@ deniseRaymond: {
 
             people: [
 
-
                 {
 
                     id:
@@ -1336,7 +1216,6 @@ paulettePaul: {
 
     families: [
 
-
         /* ====================================================
            BOUVIER
         ==================================================== */
@@ -1350,7 +1229,6 @@ paulettePaul: {
                 "Famille BOUVIER",
 
             people: [
-
 
                 {
 
@@ -1371,6 +1249,12 @@ paulettePaul: {
                 },
 
 
+                /* ============================================
+                   THIERRY
+                   
+                   4 PHOTOS
+                ============================================ */
+
                 {
 
                     id:
@@ -1386,6 +1270,16 @@ paulettePaul: {
                         [
                             "Valérie",
                             "Valerie-Thierry.jpg"
+                        ],
+
+                        [
+                            "Pauline-Bouvier",
+                            "Pauline-Bouvier.jpg"
+                        ],
+
+                        [
+                            "Victor",
+                            "Victor.jpg"
                         ]
 
                     ]
@@ -1410,7 +1304,6 @@ paulettePaul: {
                 "Famille BILLON",
 
             people: [
-
 
                 {
 
@@ -1710,16 +1603,6 @@ function showFamily(
     }
 
 
-    /*
-       Si un QR code a été utilisé,
-       on débloque l'onglet concerné.
-
-       IMPORTANT :
-
-       Un clic normal sur un onglet
-       ne débloque PAS l'onglet.
-    */
-
     if (
         unlockedByQR &&
         personId
@@ -1864,14 +1747,6 @@ function showPerson(
     if (!content) return;
 
 
-    /*
-       Un onglet est visible si :
-
-       - il a été découvert par QR code
-       - OU il fait partie des photos d'accueil
-         (cas non concerné ici)
-    */
-
     const discovered =
         isPersonDiscovered(
             person.id
@@ -1880,10 +1755,6 @@ function showPerson(
 
     let html = "";
 
-
-    /* ========================================================
-       MESSAGE
-    ======================================================== */
 
     if (discovered) {
 
@@ -1931,10 +1802,6 @@ function showPerson(
         (photo, index) => {
 
 
-            /* =================================================
-               ONGLET DECOUVERT
-            ================================================= */
-
             if (discovered) {
 
                 html += `
@@ -1963,12 +1830,6 @@ function showPerson(
                 `;
 
             }
-
-
-            /* =================================================
-               ONGLET NON DECOUVERT
-            ================================================= */
-
             else {
 
                 html += `
@@ -2030,10 +1891,6 @@ function showPerson(
         html;
 
 
-    /* ========================================================
-       ONGLET ACTIF
-    ======================================================== */
-
     document
         .querySelectorAll(".tab")
         .forEach(
@@ -2065,49 +1922,11 @@ function showPerson(
    QR CODES
 ============================================================ */
 
-/*
-
-   FORMAT PRINCIPAL DES NOUVEAUX QR CODES :
-
-   #person=branche|famille|personne
-
-
-   Exemple Anne :
-
-   #person=deniseRaymond|jean|anne
-
-
-   Exemple Marie :
-
-   #person=deniseRaymond|jean|marie
-
-
-   Le scan :
-
-   1. identifie la branche
-   2. identifie la famille
-   3. identifie la personne
-   4. enregistre la personne comme découverte
-   5. ouvre directement son onglet
-   6. affiche toutes ses photos
-
-
-   IMPORTANT :
-
-   Un clic normal sur l'onglet
-   ne fait PAS cette opération.
-*/
-
-
 function openDirectLink() {
 
     const hash =
         window.location.hash.substring(1);
 
-
-    /* ========================================================
-       PAS DE QR CODE
-    ======================================================== */
 
     if (!hash) {
 
@@ -2118,7 +1937,7 @@ function openDirectLink() {
 
 
     /* ========================================================
-       NOUVEAU FORMAT QR CODE
+       NOUVEAU FORMAT QR
     ======================================================== */
 
     if (
@@ -2171,19 +1990,10 @@ function openDirectLink() {
 
                     if (person) {
 
-                        /*
-                           LE QR CODE DECOUVRE
-                           L'ONGLET COMPLET.
-                        */
-
                         markPersonDiscovered(
                             personId
                         );
 
-
-                        /*
-                           OUVERTURE DIRECTE
-                        */
 
                         showFamily(
                             branchId,
@@ -2212,26 +2022,11 @@ function openDirectLink() {
 
 
     /* ========================================================
-       ANCIEN FORMAT DES QR CODES
-
-       Exemple :
-
-       #anne
-       #marie
-       #philippe
-
-       Ils restent compatibles.
-
-       Comme ils sont utilisés comme QR,
-       ils débloquent également l'onglet.
+       ANCIEN FORMAT QR
     ======================================================== */
 
     const destinations = {
 
-
-        /* ====================================================
-           RAYMONDE
-        ==================================================== */
 
         "raymonde-parents":
             [
@@ -2255,10 +2050,6 @@ function openDirectLink() {
             ],
 
 
-        /* ====================================================
-           JACQUELINE
-        ==================================================== */
-
         "dominique":
             [
                 "deniseRaymond",
@@ -2280,10 +2071,6 @@ function openDirectLink() {
                 "sylvain"
             ],
 
-
-        /* ====================================================
-           COLETTE
-        ==================================================== */
 
         "colette":
             [
@@ -2335,10 +2122,6 @@ function openDirectLink() {
             ],
 
 
-        /* ====================================================
-           MARIE-CLAUDE
-        ==================================================== */
-
         "marie-claude-parents":
             [
                 "deniseRaymond",
@@ -2374,10 +2157,6 @@ function openDirectLink() {
                 "baptiste"
             ],
 
-
-        /* ====================================================
-           JEAN
-        ==================================================== */
 
         "jean-parents":
             [
@@ -2415,10 +2194,6 @@ function openDirectLink() {
             ],
 
 
-        /* ====================================================
-           BOUVIER
-        ==================================================== */
-
         "bouvier-parents":
             [
                 "paulettePaul",
@@ -2433,10 +2208,6 @@ function openDirectLink() {
                 "thierry"
             ],
 
-
-        /* ====================================================
-           BILLON
-        ==================================================== */
 
         "billon-parents":
             [
@@ -2462,10 +2233,6 @@ function openDirectLink() {
     };
 
 
-    /* ========================================================
-       ANCIEN QR TROUVE
-    ======================================================== */
-
     if (
         destinations[hash]
     ) {
@@ -2484,11 +2251,6 @@ function openDirectLink() {
             destination[2];
 
 
-        /*
-           L'ancien QR est toujours considéré
-           comme un QR de découverte.
-        */
-
         markPersonDiscovered(
             personId
         );
@@ -2506,10 +2268,6 @@ function openDirectLink() {
 
     }
 
-
-    /* ========================================================
-       QR INCONNU
-    ======================================================== */
 
     showHome();
 
