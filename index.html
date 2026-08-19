@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fête Chevallier - Album Panini</title>
 
@@ -50,9 +46,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    NAVIGATION
-============================================================ */
+========================= */
 
 .navigation {
     display: flex;
@@ -85,9 +81,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    BOUTONS RETOUR
-============================================================ */
+========================= */
 
 .back-button {
     display: block;
@@ -106,9 +102,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    PAGE D'ACCUEIL
-============================================================ */
+========================= */
 
 .home-families {
     display: grid;
@@ -147,9 +143,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    LISTE DES FAMILLES
-============================================================ */
+========================= */
 
 .family-selection {
     display: grid;
@@ -177,9 +173,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    PHOTOS
-============================================================ */
+========================= */
 
 .photos {
     display: grid;
@@ -198,16 +194,21 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    PHOTO NON DECOUVERTE
-============================================================ */
+========================= */
 
 .discover-card {
     width: 100%;
     height: 320px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #ddd, #f7f7f7);
+
+    background: linear-gradient(
+        135deg,
+        #ddd,
+        #f7f7f7
+    );
 
     display: flex;
     align-items: center;
@@ -216,8 +217,8 @@ h2 {
     color: #555;
     font-size: 22px;
     font-weight: bold;
-
     text-align: center;
+
     padding: 20px;
 
     cursor: default;
@@ -243,9 +244,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    PHOTO REVELEE
-============================================================ */
+========================= */
 
 .revealed-image {
     width: 100%;
@@ -260,9 +261,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    NOM PHOTO
-============================================================ */
+========================= */
 
 .photo-name {
     margin-top: 12px;
@@ -271,9 +272,9 @@ h2 {
 }
 
 
-/* ============================================================
+/* =========================
    PHOTO MANQUANTE
-============================================================ */
+========================= */
 
 .image-error {
     height: 320px;
@@ -286,42 +287,48 @@ h2 {
 
     text-align: center;
     padding: 20px;
-
     color: #888;
 }
 
 
-/* ============================================================
-   MESSAGE INFORMATION
-============================================================ */
+/* =========================
+   MESSAGE QR
+========================= */
 
 .qr-message {
     text-align: center;
     margin: 10px auto 20px;
+
     padding: 12px 18px;
+
     max-width: 700px;
 
     border-radius: 10px;
-    background: #fff;
 
-    box-shadow:
-        0 2px 8px rgba(0,0,0,0.08);
+    background: white;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 
     color: #555;
+
     font-size: 15px;
 }
 
 
-/* ============================================================
+/* =========================
    PAGE FINALE
-============================================================ */
+========================= */
 
 .final-page {
+
     max-width: 850px;
+
     margin: 30px auto;
+
     padding: 40px 25px;
 
     background: white;
+
     border-radius: 20px;
 
     text-align: center;
@@ -331,22 +338,30 @@ h2 {
 }
 
 .final-page .trophy {
+
     font-size: 70px;
+
     margin-bottom: 10px;
 }
 
 .final-page h1 {
+
     font-size: 38px;
+
     margin-bottom: 20px;
 }
 
-.final-page .final-text {
+.final-text {
+
     font-size: 20px;
+
     line-height: 1.6;
+
     color: #555;
 }
 
 .final-word {
+
     margin: 30px auto 10px;
 
     padding: 25px 20px;
@@ -356,21 +371,25 @@ h2 {
     background: #f4f1ea;
 
     font-size: 30px;
+
     font-weight: bold;
 
     letter-spacing: 1px;
 }
 
 .final-small {
+
     margin-top: 25px;
+
     font-size: 16px;
+
     color: #777;
 }
 
 
-/* ============================================================
+/* =========================
    MOBILE
-============================================================ */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -426,7 +445,6 @@ h2 {
 }
 
 </style>
-
 </head>
 
 
@@ -450,7 +468,7 @@ const PHOTO_FOLDER = "photos/";
 
 
 /* ============================================================
-   MEMOIRE DES ONGlets DECOUVERTS
+   MEMOIRE DES ONGLETS DECOUVERTS
 ============================================================ */
 
 const STORAGE_PREFIX =
@@ -471,29 +489,15 @@ const album = {
     home: {
 
         left: {
-
-            title:
-                "Denise et Raymond",
-
-            image:
-                "Denise-et-Raymond.jpg",
-
-            branch:
-                "deniseRaymond"
-
+            title: "Denise et Raymond",
+            image: "Denise-et-Raymond.jpg",
+            branch: "deniseRaymond"
         },
 
         right: {
-
-            title:
-                "Paulette et Paul",
-
-            image:
-                "Paulette-et-Paul.jpg",
-
-            branch:
-                "paulettePaul"
-
+            title: "Paulette et Paul",
+            image: "Paulette-et-Paul.jpg",
+            branch: "paulettePaul"
         }
 
     },
@@ -505,26 +509,24 @@ const album = {
 
     deniseRaymond: {
 
-        title:
-            "Famille Denise et Raymond",
+        title: "Famille Denise et Raymond",
 
         families: [
 
-            {
-                id:
-                    "raymonde",
 
-                name:
-                    "Famille RAYMONDE",
+            /* =========================
+               RAYMONDE
+            ========================= */
+
+            {
+                id: "raymonde",
+                name: "Famille RAYMONDE",
 
                 people: [
 
                     {
-                        id:
-                            "raymonde-parents",
-
-                        name:
-                            "Parents",
+                        id: "raymonde-parents",
+                        name: "Parents",
 
                         photos: [
 
@@ -534,241 +536,101 @@ const album = {
                             ]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "philippe",
 
-                        name:
-                            "Philippe",
+                    {
+                        id: "philippe",
+                        name: "Philippe",
 
                         photos: [
 
-                            [
-                                "Philippe",
-                                "Philippe.jpg"
-                            ],
-
-                            [
-                                "Marie-Dominique",
-                                "Marie-Dominique.jpg"
-                            ],
-
-                            [
-                                "Pauline",
-                                "Pauline.jpg"
-                            ],
-
-                            [
-                                "Mathilde",
-                                "Mathilde.jpg"
-                            ],
-
-                            [
-                                "Ludo",
-                                "Ludo.jpg"
-                            ],
-
-                            [
-                                "Maud",
-                                "Maud.jpg"
-                            ],
-
-                            [
-                                "Abel",
-                                "Abel.jpg"
-                            ],
-
-                            [
-                                "Marion",
-                                "Marion.jpg"
-                            ],
-
-                            [
-                                "Damien",
-                                "Damien.jpg"
-                            ],
-
-                            [
-                                "Léonie",
-                                "Leonie.jpg"
-                            ],
-
-                            [
-                                "Maya",
-                                "Maya.jpg"
-                            ],
-
-                            [
-                                "Camille",
-                                "Camille-Damien.jpg"
-                            ],
-
-                            [
-                                "Benjamin",
-                                "Benjamin.jpg"
-                            ],
-
-                            [
-                                "Louise",
-                                "Louise.jpg"
-                            ],
-
-                            [
-                                "Thibault",
-                                "Thibault.jpg"
-                            ]
+                            ["Philippe", "Philippe.jpg"],
+                            ["Marie-Dominique", "Marie-Dominique.jpg"],
+                            ["Pauline", "Pauline.jpg"],
+                            ["Mathilde", "Mathilde.jpg"],
+                            ["Ludo", "Ludo.jpg"],
+                            ["Maud", "Maud.jpg"],
+                            ["Abel", "Abel.jpg"],
+                            ["Marion", "Marion.jpg"],
+                            ["Damien", "Damien.jpg"],
+                            ["Léonie", "Leonie.jpg"],
+                            ["Maya", "Maya.jpg"],
+                            ["Camille", "Camille-Damien.jpg"],
+                            ["Benjamin", "Benjamin.jpg"],
+                            ["Louise", "Louise.jpg"],
+                            ["Thibault", "Thibault.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "helene",
 
-                        name:
-                            "Hélène",
+                    {
+                        id: "helene",
+                        name: "Hélène",
 
                         photos: [
 
-                            [
-                                "Hélène",
-                                "Helene.jpg"
-                            ],
-
-                            [
-                                "Corinne",
-                                "Corinne.jpg"
-                            ]
+                            ["Hélène", "Helene.jpg"],
+                            ["Corinne", "Corinne.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             },
 
 
-            {
-                id:
-                    "jacqueline",
+            /* =========================
+               JACQUELINE
+            ========================= */
 
-                name:
-                    "Famille JACQUELINE",
+            {
+                id: "jacqueline",
+                name: "Famille JACQUELINE",
 
                 people: [
 
                     {
-                        id:
-                            "dominique",
-
-                        name:
-                            "Dominique",
+                        id: "dominique",
+                        name: "Dominique",
 
                         photos: [
 
-                            [
-                                "Dominique et Josette",
-                                "Dominique.jpg"
-                            ],
-
-                            [
-                                "Sébastien",
-                                "Sebastien.jpg"
-                            ],
-
-                            [
-                                "Delphine",
-                                "Delphine.jpg"
-                            ],
-
-                            [
-                                "Maëlle",
-                                "Maelle.jpg"
-                            ],
-
-                            [
-                                "Julie",
-                                "Julie.jpg"
-                            ]
+                            ["Dominique et Josette", "Dominique.jpg"],
+                            ["Sébastien", "Sebastien.jpg"],
+                            ["Delphine", "Delphine.jpg"],
+                            ["Maëlle", "Maelle.jpg"],
+                            ["Julie", "Julie.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "beatrice",
 
-                        name:
-                            "Béatrice",
+                    {
+                        id: "beatrice",
+                        name: "Béatrice",
 
                         photos: [
 
-                            [
-                                "Béatrice",
-                                "Beatrice.jpg"
-                            ],
-
-                            [
-                                "Amélie et Lothaire",
-                                "Amelie.jpg"
-                            ],
-
-                            [
-                                "Enfants Amélie",
-                                "Enfants Amelie.jpg"
-                            ],
-
-                            [
-                                "Vincent",
-                                "Vincent.jpg"
-                            ],
-
-                            [
-                                "Anne-Sophie",
-                                "Anne-Sophie.jpg"
-                            ],
-
-                            [
-                                "Enfants Vincent",
-                                "Enfants Vincent.jpg"
-                            ],
-
-                            [
-                                "Emmanuelle",
-                                "Emmanuelle.jpg"
-                            ],
-
-                            [
-                                "Simon",
-                                "Simon.jpg"
-                            ],
-
-                            [
-                                "Enfants Emmanuelle",
-                                "Enfants Emmanuelle.jpg"
-                            ],
-
-                            [
-                                "Elise et sa famille",
-                                "Elise et sa famille.jpg"
-                            ]
+                            ["Béatrice", "Beatrice.jpg"],
+                            ["Amélie et Lothaire", "Amelie.jpg"],
+                            ["Enfants Amélie", "Enfants Amelie.jpg"],
+                            ["Vincent", "Vincent.jpg"],
+                            ["Anne-Sophie", "Anne-Sophie.jpg"],
+                            ["Enfants Vincent", "Enfants Vincent.jpg"],
+                            ["Emmanuelle", "Emmanuelle.jpg"],
+                            ["Simon", "Simon.jpg"],
+                            ["Enfants Emmanuelle", "Enfants Emmanuelle.jpg"],
+                            ["Elise et sa famille", "Elise et sa famille.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "sylvain",
 
-                        name:
-                            "Sylvain",
+                    {
+                        id: "sylvain",
+                        name: "Sylvain",
 
                         photos: [
 
@@ -788,688 +650,320 @@ const album = {
                             ]
 
                         ]
-
                     }
 
                 ]
-
             },
 
 
-            {
-                id:
-                    "colette",
+            /* =========================
+               COLETTE
+            ========================= */
 
-                name:
-                    "Famille COLETTE",
+            {
+                id: "colette",
+                name: "Famille COLETTE",
 
                 people: [
 
                     {
-                        id:
-                            "colette",
-
-                        name:
-                            "Colette",
+                        id: "colette",
+                        name: "Colette",
 
                         photos: [
 
-                            [
-                                "Colette",
-                                "Colette.jpg"
-                            ]
+                            ["Colette", "Colette.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "bruno",
 
-                        name:
-                            "Bruno",
+                    {
+                        id: "bruno",
+                        name: "Bruno",
 
                         photos: [
 
-                            [
-                                "Bruno",
-                                "Bruno.jpg"
-                            ],
-
-                            [
-                                "Marie",
-                                "Marie-Bruno.jpg"
-                            ],
-
-                            [
-                                "Victoria",
-                                "Victoria.jpg"
-                            ],
-
-                            [
-                                "Bilal",
-                                "Bilal.jpg"
-                            ],
-
-                            [
-                                "Isac",
-                                "Isac.jpg"
-                            ]
+                            ["Bruno", "Bruno.jpg"],
+                            ["Marie", "Marie-Bruno.jpg"],
+                            ["Victoria", "Victoria.jpg"],
+                            ["Bilal", "Bilal.jpg"],
+                            ["Isac", "Isac.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "catherine",
 
-                        name:
-                            "Catherine",
+                    {
+                        id: "catherine",
+                        name: "Catherine",
 
                         photos: [
 
-                            [
-                                "Catherine",
-                                "Catherine.jpg"
-                            ],
-
-                            [
-                                "Christian",
-                                "Christian.jpg"
-                            ],
-
-                            [
-                                "Julie",
-                                "Julie Chevallier.jpg"
-                            ],
-
-                            [
-                                "Thomas",
-                                "Thomas.jpg"
-                            ],
-
-                            [
-                                "Léa",
-                                "Lea.jpg"
-                            ],
-
-                            [
-                                "Robin",
-                                "Robin.jpg"
-                            ],
-
-                            [
-                                "Charles",
-                                "Charles.jpg"
-                            ]
+                            ["Catherine", "Catherine.jpg"],
+                            ["Christian", "Christian.jpg"],
+                            ["Julie", "Julie Chevallier.jpg"],
+                            ["Thomas", "Thomas.jpg"],
+                            ["Léa", "Lea.jpg"],
+                            ["Robin", "Robin.jpg"],
+                            ["Charles", "Charles.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "francois",
 
-                        name:
-                            "François",
+                    {
+                        id: "francois",
+                        name: "François",
 
                         photos: [
 
-                            [
-                                "François",
-                                "François.jpg"
-                            ]
+                            ["François", "François.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "martine",
 
-                        name:
-                            "Martine",
+                    {
+                        id: "martine",
+                        name: "Martine",
 
                         photos: [
 
-                            [
-                                "Martine",
-                                "Martine.jpg"
-                            ],
-
-                            [
-                                "Achille",
-                                "Achille.jpg"
-                            ],
-
-                            [
-                                "Noemie",
-                                "Noemie.jpg"
-                            ],
-
-                            [
-                                "Prune",
-                                "Prune.jpg"
-                            ],
-
-                            [
-                                "Tim",
-                                "Tim.jpg"
-                            ]
+                            ["Martine", "Martine.jpg"],
+                            ["Achille", "Achille.jpg"],
+                            ["Noemie", "Noemie.jpg"],
+                            ["Prune", "Prune.jpg"],
+                            ["Tim", "Tim.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "fabienne",
 
-                        name:
-                            "Fabienne",
+                    {
+                        id: "fabienne",
+                        name: "Fabienne",
 
                         photos: [
 
-                            [
-                                "Fabienne",
-                                "Fabienne.jpg"
-                            ],
-
-                            [
-                                "Philippe",
-                                "Philippe – Fabienne.jpg"
-                            ],
-
-                            [
-                                "Valentin",
-                                "Valentin.jpg"
-                            ],
-
-                            [
-                                "Margaux",
-                                "Margaux.jpg"
-                            ],
-
-                            [
-                                "Xavier",
-                                "Xavier.jpg"
-                            ],
-
-                            [
-                                "Alma",
-                                "Alma.jpg"
-                            ]
+                            ["Fabienne", "Fabienne.jpg"],
+                            ["Philippe", "Philippe – Fabienne.jpg"],
+                            ["Valentin", "Valentin.jpg"],
+                            ["Margaux", "Margaux.jpg"],
+                            ["Xavier", "Xavier.jpg"],
+                            ["Alma", "Alma.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "laurent",
 
-                        name:
-                            "Laurent",
+                    {
+                        id: "laurent",
+                        name: "Laurent",
 
                         photos: [
 
-                            [
-                                "Laurent",
-                                "Laurent.jpg"
-                            ],
-
-                            [
-                                "Chrystel",
-                                "Chrystel.jpg"
-                            ],
-
-                            [
-                                "Charlotte",
-                                "Charlotte – Laurent.jpg"
-                            ],
-
-                            [
-                                "Benjamin",
-                                "Benjamin – Charlotte.jpg"
-                            ],
-
-                            [
-                                "Gabrielle",
-                                "Gabrielle.jpg"
-                            ],
-
-                            [
-                                "Simon",
-                                "Simon – Gabrielle.jpg"
-                            ],
-
-                            [
-                                "Arthur",
-                                "Arthur.jpg"
-                            ]
+                            ["Laurent", "Laurent.jpg"],
+                            ["Chrystel", "Chrystel.jpg"],
+                            ["Charlotte", "Charlotte – Laurent.jpg"],
+                            ["Benjamin", "Benjamin – Charlotte.jpg"],
+                            ["Gabrielle", "Gabrielle.jpg"],
+                            ["Simon", "Simon – Gabrielle.jpg"],
+                            ["Arthur", "Arthur.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             },
 
 
-            {
-                id:
-                    "marie-claude",
+            /* =========================
+               MARIE-CLAUDE
+            ========================= */
 
-                name:
-                    "Famille MARIE-CLAUDE",
+            {
+                id: "marie-claude",
+                name: "Famille MARIE-CLAUDE",
 
                 people: [
 
                     {
-                        id:
-                            "marie-claude-parents",
-
-                        name:
-                            "Parents",
+                        id: "marie-claude-parents",
+                        name: "Parents",
 
                         photos: [
 
-                            [
-                                "Marie-Claude",
-                                "Marie-Claude.jpg"
-                            ],
-
-                            [
-                                "Joseph",
-                                "Joseph.jpg"
-                            ]
+                            ["Marie-Claude", "Marie-Claude.jpg"],
+                            ["Joseph", "Joseph.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "cyril",
 
-                        name:
-                            "Cyril",
+                    {
+                        id: "cyril",
+                        name: "Cyril",
 
                         photos: [
 
-                            [
-                                "Cyril",
-                                "Cyril.jpg"
-                            ],
-
-                            [
-                                "Angélique",
-                                "Angelique.jpg"
-                            ],
-
-                            [
-                                "Héloïse",
-                                "Heloise.jpg"
-                            ],
-
-                            [
-                                "Antoine",
-                                "Antoine-Heloise.jpg"
-                            ],
-
-                            [
-                                "Timeo",
-                                "Timeo.jpg"
-                            ],
-
-                            [
-                                "Aurelien",
-                                "Aurelien.jpg"
-                            ],
-
-                            [
-                                "Manon",
-                                "Manon.jpg"
-                            ],
-
-                            [
-                                "Antoine",
-                                "Antoine.jpg"
-                            ],
-
-                            [
-                                "Lily Rose",
-                                "Lily-Rose.jpg"
-                            ]
+                            ["Cyril", "Cyril.jpg"],
+                            ["Angélique", "Angelique.jpg"],
+                            ["Héloïse", "Heloise.jpg"],
+                            ["Antoine", "Antoine-Heloise.jpg"],
+                            ["Timeo", "Timeo.jpg"],
+                            ["Aurelien", "Aurelien.jpg"],
+                            ["Manon", "Manon.jpg"],
+                            ["Antoine", "Antoine.jpg"],
+                            ["Lily Rose", "Lily-Rose.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "julien",
 
-                        name:
-                            "Julien",
+                    {
+                        id: "julien",
+                        name: "Julien",
 
                         photos: [
 
-                            [
-                                "Julien",
-                                "Julien.jpg"
-                            ],
-
-                            [
-                                "Marlène",
-                                "Marlene.jpg"
-                            ],
-
-                            [
-                                "Jules",
-                                "Jules.jpg"
-                            ],
-
-                            [
-                                "Adèle",
-                                "Adele.jpg"
-                            ]
+                            ["Julien", "Julien.jpg"],
+                            ["Marlène", "Marlene.jpg"],
+                            ["Jules", "Jules.jpg"],
+                            ["Adèle", "Adele.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "maxime",
 
-                        name:
-                            "Maxime",
+                    {
+                        id: "maxime",
+                        name: "Maxime",
 
                         photos: [
 
-                            [
-                                "Maxime",
-                                "Maxime.jpg"
-                            ],
-
-                            [
-                                "Audrey",
-                                "Audrey.jpg"
-                            ],
-
-                            [
-                                "Alice",
-                                "Alice.jpg"
-                            ],
-
-                            [
-                                "Justine",
-                                "Justine.jpg"
-                            ],
-
-                            [
-                                "Léonore",
-                                "Leonore.jpg"
-                            ]
+                            ["Maxime", "Maxime.jpg"],
+                            ["Audrey", "Audrey.jpg"],
+                            ["Alice", "Alice.jpg"],
+                            ["Justine", "Justine.jpg"],
+                            ["Léonore", "Leonore.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "baptiste",
 
-                        name:
-                            "Baptiste",
+                    {
+                        id: "baptiste",
+                        name: "Baptiste",
 
                         photos: [
 
-                            [
-                                "Baptiste",
-                                "Baptiste.jpg"
-                            ],
-
-                            [
-                                "Aurore",
-                                "Aurore.jpg"
-                            ],
-
-                            [
-                                "Soline",
-                                "Soline.jpg"
-                            ],
-
-                            [
-                                "Marceau",
-                                "Marceau.jpg"
-                            ],
-
-                            [
-                                "Romane",
-                                "Romane.jpg"
-                            ]
+                            ["Baptiste", "Baptiste.jpg"],
+                            ["Aurore", "Aurore.jpg"],
+                            ["Soline", "Soline.jpg"],
+                            ["Marceau", "Marceau.jpg"],
+                            ["Romane", "Romane.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             },
 
 
-            {
-                id:
-                    "jean",
+            /* =========================
+               JEAN
+            ========================= */
 
-                name:
-                    "Famille JEAN",
+            {
+                id: "jean",
+                name: "Famille JEAN",
 
                 people: [
 
                     {
-                        id:
-                            "jean-parents",
-
-                        name:
-                            "Parents",
+                        id: "jean-parents",
+                        name: "Parents",
 
                         photos: [
 
-                            [
-                                "Jean",
-                                "Jean.jpg"
-                            ],
-
-                            [
-                                "Sylviane",
-                                "Sylviane.jpg"
-                            ]
+                            ["Jean", "Jean.jpg"],
+                            ["Sylviane", "Sylviane.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "anne",
 
-                        name:
-                            "Anne",
+                    {
+                        id: "anne",
+                        name: "Anne",
 
                         photos: [
 
-                            [
-                                "Anne",
-                                "Anne.jpg"
-                            ],
-
-                            [
-                                "Valérie",
-                                "Valerie.jpg"
-                            ],
-
-                            [
-                                "Léopold",
-                                "Leopold.jpg"
-                            ],
-
-                            [
-                                "Joséphine",
-                                "Josephine.jpg"
-                            ]
+                            ["Anne", "Anne.jpg"],
+                            ["Valérie", "Valerie.jpg"],
+                            ["Léopold", "Leopold.jpg"],
+                            ["Joséphine", "Josephine.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "marie",
 
-                        name:
-                            "Marie",
+                    {
+                        id: "marie",
+                        name: "Marie",
 
                         photos: [
 
-                            [
-                                "Marie",
-                                "Marie.jpg"
-                            ],
-
-                            [
-                                "Coralie",
-                                "Coralie.jpg"
-                            ],
-
-                            [
-                                "Jean",
-                                "Jean-familleMarie.jpg"
-                            ],
-
-                            [
-                                "Maëva",
-                                "Maeva.jpg"
-                            ],
-
-                            [
-                                "Faustine",
-                                "Faustine.jpg"
-                            ],
-
-                            [
-                                "Remy",
-                                "Remy.jpg"
-                            ],
-
-                            [
-                                "Paulin",
-                                "Paulin.jpg"
-                            ],
-
-                            [
-                                "Adam",
-                                "Adam.jpg"
-                            ],
-
-                            [
-                                "Clara",
-                                "Clara.jpg"
-                            ]
+                            ["Marie", "Marie.jpg"],
+                            ["Coralie", "Coralie.jpg"],
+                            ["Jean", "Jean-familleMarie.jpg"],
+                            ["Maëva", "Maeva.jpg"],
+                            ["Faustine", "Faustine.jpg"],
+                            ["Remy", "Remy.jpg"],
+                            ["Paulin", "Paulin.jpg"],
+                            ["Adam", "Adam.jpg"],
+                            ["Clara", "Clara.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "pierre-francois",
 
-                        name:
-                            "Pierre-François",
+                    {
+                        id: "pierre-francois",
+                        name: "Pierre-François",
 
                         photos: [
 
-                            [
-                                "Pierre-François",
-                                "Pierre-Francois.jpg"
-                            ],
-
-                            [
-                                "Alexandra",
-                                "Alexandra.jpg"
-                            ],
-
-                            [
-                                "Camille",
-                                "Camille.jpg"
-                            ],
-
-                            [
-                                "Candice",
-                                "Candice.jpg"
-                            ]
+                            ["Pierre-François", "Pierre-Francois.jpg"],
+                            ["Alexandra", "Alexandra.jpg"],
+                            ["Camille", "Camille.jpg"],
+                            ["Candice", "Candice.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "jean-charles",
 
-                        name:
-                            "Jean-Charles",
+                    {
+                        id: "jean-charles",
+                        name: "Jean-Charles",
 
                         photos: [
 
-                            [
-                                "Jean-Charles",
-                                "Jean-Charles.jpg"
-                            ],
-
-                            [
-                                "Aude",
-                                "Aude.jpg"
-                            ],
-
-                            [
-                                "Bixente",
-                                "Bixente.jpg"
-                            ],
-
-                            [
-                                "Louca",
-                                "Louca.jpg"
-                            ],
-
-                            [
-                                "Gabin",
-                                "Gabin.jpg"
-                            ],
-
-                            [
-                                "Charlie",
-                                "Charlie.jpg"
-                            ]
+                            ["Jean-Charles", "Jean-Charles.jpg"],
+                            ["Aude", "Aude.jpg"],
+                            ["Bixente", "Bixente.jpg"],
+                            ["Louca", "Louca.jpg"],
+                            ["Gabin", "Gabin.jpg"],
+                            ["Charlie", "Charlie.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             }
 
         ]
-
     },
 
 
@@ -1479,177 +973,113 @@ const album = {
 
     paulettePaul: {
 
-        title:
-            "Famille Paulette et Paul",
+        title: "Famille Paulette et Paul",
 
         families: [
 
-            {
-                id:
-                    "bouvier",
 
-                name:
-                    "Famille BOUVIER",
+            /* =========================
+               BOUVIER
+            ========================= */
+
+            {
+                id: "bouvier",
+                name: "Famille BOUVIER",
 
                 people: [
 
                     {
-                        id:
-                            "bouvier-parents",
-
-                        name:
-                            "Parents",
+                        id: "bouvier-parents",
+                        name: "Parents",
 
                         photos: [
 
-                            [
-                                "Jeanine",
-                                "Jeanine.jpg"
-                            ],
-
-                            [
-                                "Louis",
-                                "Louis.jpg"
-                            ]
+                            ["Jeanine", "Jeanine.jpg"],
+                            ["Louis", "Louis.jpg"]
 
                         ]
-
                     },
 
 
-                    /* ==========================================
-                       THIERRY
-                       
-                       4 PHOTOS
-                    ========================================== */
-
                     {
-                        id:
-                            "thierry",
-
-                        name:
-                            "Thierry",
+                        id: "thierry",
+                        name: "Thierry",
 
                         photos: [
 
-                            [
-                                "Thierry",
-                                "Thierry.jpg"
-                            ],
+                            ["Thierry", "Thierry.jpg"],
+                            ["Valérie", "Valerie-Thierry.jpg"],
 
-                            [
-                                "Valérie",
-                                "Valerie-Thierry.jpg"
-                            ],
+                            /*
+                               IMPORTANT :
+                               Le nom affiché est Pauline.
+                               Le fichier utilisé est Pauline-Bouvier.jpg.
+                            */
 
-                            [
-                                "Pauline",
-                                "Pauline-Bouvier.jpg"
-                            ],
+                            ["Pauline", "Pauline-Bouvier.jpg"],
 
-                            [
-                                "Victor",
-                                "Victor.jpg"
-                            ]
+                            ["Victor", "Victor.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             },
 
 
-            {
-                id:
-                    "billon",
+            /* =========================
+               BILLON
+            ========================= */
 
-                name:
-                    "Famille BILLON",
+            {
+                id: "billon",
+                name: "Famille BILLON",
 
                 people: [
 
                     {
-                        id:
-                            "billon-parents",
-
-                        name:
-                            "Parents",
+                        id: "billon-parents",
+                        name: "Parents",
 
                         photos: [
 
-                            [
-                                "Marie-France",
-                                "Marie-France.jpg"
-                            ],
-
-                            [
-                                "Jean-Claude",
-                                "Jean-Claude.jpg"
-                            ]
+                            ["Marie-France", "Marie-France.jpg"],
+                            ["Jean-Claude", "Jean-Claude.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "sophie",
 
-                        name:
-                            "Sophie",
+                    {
+                        id: "sophie",
+                        name: "Sophie",
 
                         photos: [
 
-                            [
-                                "Sophie",
-                                "Sophie.jpg"
-                            ],
-
-                            [
-                                "Frédéric",
-                                "Frederic.jpg"
-                            ],
-
-                            [
-                                "Margot",
-                                "Margot.jpg"
-                            ],
-
-                            [
-                                "Paul",
-                                "Paul.jpg"
-                            ]
+                            ["Sophie", "Sophie.jpg"],
+                            ["Frédéric", "Frederic.jpg"],
+                            ["Margot", "Margot.jpg"],
+                            ["Paul", "Paul.jpg"]
 
                         ]
-
                     },
 
-                    {
-                        id:
-                            "charlotte",
 
-                        name:
-                            "Charlotte",
+                    {
+                        id: "charlotte",
+                        name: "Charlotte",
 
                         photos: [
 
-                            [
-                                "Charlotte",
-                                "Charlotte.jpg"
-                            ]
+                            ["Charlotte", "Charlotte.jpg"]
 
                         ]
-
                     }
 
                 ]
-
             }
 
         ]
-
     }
 
 };
@@ -1659,8 +1089,7 @@ const album = {
    APPLICATION
 ============================================================ */
 
-const app =
-    document.getElementById("app");
+const app = document.getElementById("app");
 
 
 /* ============================================================
@@ -1694,43 +1123,30 @@ function markPersonDiscovered(personId) {
 
 
 /* ============================================================
-   COMPTER LE NOMBRE TOTAL D'ONGLETS
+   RECUPERATION DE TOUTES LES PERSONNES
 ============================================================ */
 
 function getAllPeople() {
 
     const people = [];
 
-    Object.keys(album).forEach(
-        branchId => {
+    Object.keys(album).forEach(branchId => {
 
-            if (
-                branchId === "home"
-            ) {
-                return;
-            }
-
-            const branch =
-                album[branchId];
-
-            branch.families.forEach(
-                family => {
-
-                    family.people.forEach(
-                        person => {
-
-                            people.push(
-                                person.id
-                            );
-
-                        }
-                    );
-
-                }
-            );
-
+        if (branchId === "home") {
+            return;
         }
-    );
+
+        album[branchId].families.forEach(family => {
+
+            family.people.forEach(person => {
+
+                people.push(person.id);
+
+            });
+
+        });
+
+    });
 
     return people;
 
@@ -1738,20 +1154,15 @@ function getAllPeople() {
 
 
 /* ============================================================
-   VERIFIER SI TOUT L'ALBUM EST DECOUVERT
+   VERIFICATION ALBUM COMPLET
 ============================================================ */
 
 function isAlbumComplete() {
 
-    const allPeople =
-        getAllPeople();
+    const people = getAllPeople();
 
-
-    return allPeople.every(
-        personId =>
-            isPersonDiscovered(
-                personId
-            )
+    return people.every(
+        personId => isPersonDiscovered(personId)
     );
 
 }
@@ -1774,6 +1185,7 @@ function showFinalPage() {
             <h1>
                 ALBUM COMPLET !
             </h1>
+
 
             <div class="final-text">
 
@@ -1818,17 +1230,20 @@ function showFinalPage() {
             </div>
 
 
-            <!-- ================================
-                 RETOUR A L'ALBUM
-            ================================= -->
+            <!-- =========================================
+                 IMPORTANT :
+                 forceHome = true permet de revenir
+                 à la première page même si l'album
+                 est complètement découvert.
+            ========================================== -->
 
             <button
                 class="back-button"
-                onclick="showHome()"
+                onclick="showHome(true)"
                 style="
-                    margin-top: 30px;
-                    font-size: 17px;
-                    padding: 14px 24px;
+                    margin-top:30px;
+                    font-size:17px;
+                    padding:14px 24px;
                 "
             >
 
@@ -1847,9 +1262,22 @@ function showFinalPage() {
    ACCUEIL
 ============================================================ */
 
-function showHome() {
+/*
+   forceHome = false :
+   comportement normal.
 
-    if (isAlbumComplete()) {
+   forceHome = true :
+   permet de revenir à l'accueil même lorsque
+   les 28 QR codes ont été découverts.
+*/
+
+function showHome(forceHome = false) {
+
+
+    if (
+        !forceHome &&
+        isAlbumComplete()
+    ) {
 
         showFinalPage();
 
@@ -1868,16 +1296,13 @@ function showHome() {
             Fête Chevallier 2026
         </div>
 
+
         <div class="home-families">
 
 
             <div
                 class="home-card"
-                onclick="
-                    showFamilyList(
-                        'deniseRaymond'
-                    )
-                "
+                onclick="showFamilyList('deniseRaymond')"
             >
 
                 <img
@@ -1896,11 +1321,7 @@ function showHome() {
 
             <div
                 class="home-card"
-                onclick="
-                    showFamilyList(
-                        'paulettePaul'
-                    )
-                "
+                onclick="showFamilyList('paulettePaul')"
             >
 
                 <img
@@ -1930,13 +1351,11 @@ function showHome() {
 
 function showFamilyList(branchId) {
 
-    const branch =
-        album[branchId];
-
+    const branch = album[branchId];
 
     if (!branch) {
 
-        showHome();
+        showHome(true);
 
         return;
 
@@ -1947,7 +1366,7 @@ function showFamilyList(branchId) {
 
         <button
             class="back-button"
-            onclick="showHome()"
+            onclick="showHome(true)"
         >
             ← Retour
         </button>
@@ -1965,29 +1384,27 @@ function showFamilyList(branchId) {
     `;
 
 
-    branch.families.forEach(
-        family => {
+    branch.families.forEach(family => {
 
-            html += `
+        html += `
 
-                <button
-                    class="family-button"
-                    onclick="
-                        showFamily(
-                            '${branchId}',
-                            '${family.id}'
-                        )
-                    "
-                >
+            <button
+                class="family-button"
+                onclick="
+                    showFamily(
+                        '${branchId}',
+                        '${family.id}'
+                    )
+                "
+            >
 
-                    ${family.name}
+                ${family.name}
 
-                </button>
+            </button>
 
-            `;
+        `;
 
-        }
-    );
+    });
 
 
     html += `
@@ -1997,8 +1414,7 @@ function showFamilyList(branchId) {
     `;
 
 
-    app.innerHTML =
-        html;
+    app.innerHTML = html;
 
 }
 
@@ -2013,29 +1429,25 @@ function showFamily(
     personId = null
 ) {
 
-    const branch =
-        album[branchId];
-
+    const branch = album[branchId];
 
     if (!branch) {
 
-        showHome();
+        showHome(true);
 
         return;
 
     }
 
 
-    const family =
-        branch.families.find(
-            item =>
-                item.id === familyId
-        );
+    const family = branch.families.find(
+        item => item.id === familyId
+    );
 
 
     if (!family) {
 
-        showHome();
+        showHome(true);
 
         return;
 
@@ -2052,43 +1464,45 @@ function showFamily(
                 )
             "
         >
+
             ← Retour aux familles
+
         </button>
+
 
         <h1>
             ${family.name}
         </h1>
+
 
         <div class="navigation">
 
     `;
 
 
-    family.people.forEach(
-        person => {
+    family.people.forEach(person => {
 
-            html += `
+        html += `
 
-                <button
-                    id="tab-${person.id}"
-                    class="tab"
-                    onclick="
-                        showPerson(
-                            '${branchId}',
-                            '${familyId}',
-                            '${person.id}'
-                        )
-                    "
-                >
+            <button
+                id="tab-${person.id}"
+                class="tab"
+                onclick="
+                    showPerson(
+                        '${branchId}',
+                        '${familyId}',
+                        '${person.id}'
+                    )
+                "
+            >
 
-                    ${person.name}
+                ${person.name}
 
-                </button>
+            </button>
 
-            `;
+        `;
 
-        }
-    );
+    });
 
 
     html += `
@@ -2100,8 +1514,7 @@ function showFamily(
     `;
 
 
-    app.innerHTML =
-        html;
+    app.innerHTML = html;
 
 
     let selectedPersonId =
@@ -2110,17 +1523,14 @@ function showFamily(
 
     if (personId) {
 
-        const found =
-            family.people.find(
-                person =>
-                    person.id === personId
-            );
+        const found = family.people.find(
+            person => person.id === personId
+        );
 
 
         if (found) {
 
-            selectedPersonId =
-                found.id;
+            selectedPersonId = found.id;
 
         }
 
@@ -2146,31 +1556,31 @@ function showPerson(
     personId
 ) {
 
-    const branch =
-        album[branchId];
+    const branch = album[branchId];
+
+    if (!branch) {
+        return;
+    }
 
 
-    if (!branch) return;
+    const family = branch.families.find(
+        item => item.id === familyId
+    );
 
 
-    const family =
-        branch.families.find(
-            item =>
-                item.id === familyId
-        );
+    if (!family) {
+        return;
+    }
 
 
-    if (!family) return;
+    const person = family.people.find(
+        item => item.id === personId
+    );
 
 
-    const person =
-        family.people.find(
-            item =>
-                item.id === personId
-        );
-
-
-    if (!person) return;
+    if (!person) {
+        return;
+    }
 
 
     const content =
@@ -2179,13 +1589,13 @@ function showPerson(
         );
 
 
-    if (!content) return;
+    if (!content) {
+        return;
+    }
 
 
     const discovered =
-        isPersonDiscovered(
-            person.id
-        );
+        isPersonDiscovered(person.id);
 
 
     let html = "";
@@ -2207,15 +1617,13 @@ function showPerson(
 
         `;
 
-    }
-    else {
+    } else {
 
         html += `
 
             <div class="qr-message">
 
-                🔒 Cet onglet n'est pas encore
-                découvert.
+                🔒 Cet onglet n'est pas encore découvert.
 
                 <br>
 
@@ -2243,80 +1651,80 @@ function showPerson(
         (photo, index) => {
 
 
-            if (discovered) {
+        if (discovered) {
 
-                html += `
 
-                    <div class="photo-card">
+            html += `
 
-                        <img
-                            class="revealed-image"
-                            src="${PHOTO_FOLDER}${photo[1]}"
-                            alt="${photo[0]}"
-                            draggable="false"
-                            onerror="imageError(this)"
-                        >
+                <div class="photo-card">
 
-                        <div class="photo-name">
+                    <img
+                        class="revealed-image"
+                        src="${PHOTO_FOLDER}${photo[1]}"
+                        alt="${photo[0]}"
+                        draggable="false"
+                        onerror="imageError(this)"
+                    >
 
-                            ${index + 1}.
-                            ${photo[0]}
+                    <div class="photo-name">
 
-                        </div>
+                        ${index + 1}.
+                        ${photo[0]}
 
                     </div>
 
-                `;
+                </div>
 
-            }
-            else {
+            `;
 
-                html += `
 
-                    <div class="photo-card">
+        } else {
+
+
+            html += `
+
+                <div class="photo-card">
+
+                    <div
+                        class="discover-card"
+                    >
 
                         <div
-                            class="discover-card"
+                            class="discover-inner"
                         >
 
                             <div
-                                class="discover-inner"
+                                class="discover-icon"
                             >
+                                🔒
+                            </div>
 
-                                <div
-                                    class="discover-icon"
-                                >
-                                    🔒
-                                </div>
-
-                                <div
-                                    class="discover-text"
-                                >
-                                    Photo à découvrir
-                                </div>
-
+                            <div
+                                class="discover-text"
+                            >
+                                Photo à découvrir
                             </div>
 
                         </div>
 
+                    </div>
 
-                        <div
-                            class="photo-name"
-                        >
 
-                            ${index + 1}.
-                            ${photo[0]}
+                    <div class="photo-name">
 
-                        </div>
+                        ${index + 1}.
+                        ${photo[0]}
 
                     </div>
 
-                `;
+                </div>
 
-            }
+            `;
 
         }
-    );
+
+
+    });
 
 
     html += `
@@ -2326,18 +1734,20 @@ function showPerson(
     `;
 
 
-    content.innerHTML =
-        html;
+    content.innerHTML = html;
 
+
+    /* Onglet actif */
 
     document
         .querySelectorAll(".tab")
-        .forEach(
-            button =>
-                button.classList.remove(
-                    "active"
-                )
-        );
+        .forEach(button => {
+
+            button.classList.remove(
+                "active"
+            );
+
+        });
 
 
     const activeTab =
@@ -2358,7 +1768,7 @@ function showPerson(
 
 
 /* ============================================================
-   QR CODES
+   QR CODES / LIENS DIRECTS
 ============================================================ */
 
 function openDirectLink() {
@@ -2366,6 +1776,11 @@ function openDirectLink() {
     const hash =
         window.location.hash.substring(1);
 
+
+    /*
+       Pas de QR code :
+       ouverture normale de l'accueil.
+    */
 
     if (!hash) {
 
@@ -2376,106 +1791,19 @@ function openDirectLink() {
     }
 
 
-    /* ========================================================
-       NOUVEAU FORMAT QR
-    ======================================================== */
+    /*
+       Les 28 QR codes utilisent les identifiants
+       ci-dessous.
 
-    if (
-        hash.startsWith("person=")
-    ) {
-
-        const data =
-            hash.substring(7);
-
-
-        const parts =
-            data.split("|");
-
-
-        if (
-            parts.length === 3
-        ) {
-
-            const branchId =
-                parts[0];
-
-            const familyId =
-                parts[1];
-
-            const personId =
-                parts[2];
-
-
-            const branch =
-                album[branchId];
-
-
-            if (branch) {
-
-                const family =
-                    branch.families.find(
-                        item =>
-                            item.id === familyId
-                    );
-
-
-                if (family) {
-
-                    const person =
-                        family.people.find(
-                            item =>
-                                item.id === personId
-                        );
-
-
-                    if (person) {
-
-                        markPersonDiscovered(
-                            personId
-                        );
-
-
-                        if (
-                            isAlbumComplete()
-                        ) {
-
-                            showFinalPage();
-
-                        }
-                        else {
-
-                            showFamily(
-                                branchId,
-                                familyId,
-                                personId
-                            );
-
-                        }
-
-
-                        return;
-
-                    }
-
-                }
-
-            }
-
-        }
-
-
-        showHome();
-
-        return;
-
-    }
-
-
-    /* ========================================================
-       ANCIEN FORMAT QR
-    ======================================================== */
+       IMPORTANT :
+       Un QR code = une personne = TOUTES
+       les photos de son onglet.
+    */
 
     const destinations = {
+
+
+        /* RAYMONDE */
 
         "raymonde-parents":
             [
@@ -2499,6 +1827,8 @@ function openDirectLink() {
             ],
 
 
+        /* JACQUELINE */
+
         "dominique":
             [
                 "deniseRaymond",
@@ -2520,6 +1850,8 @@ function openDirectLink() {
                 "sylvain"
             ],
 
+
+        /* COLETTE */
 
         "colette":
             [
@@ -2571,6 +1903,8 @@ function openDirectLink() {
             ],
 
 
+        /* MARIE-CLAUDE */
+
         "marie-claude-parents":
             [
                 "deniseRaymond",
@@ -2606,6 +1940,8 @@ function openDirectLink() {
                 "baptiste"
             ],
 
+
+        /* JEAN */
 
         "jean-parents":
             [
@@ -2643,6 +1979,8 @@ function openDirectLink() {
             ],
 
 
+        /* BOUVIER */
+
         "bouvier-parents":
             [
                 "paulettePaul",
@@ -2657,6 +1995,8 @@ function openDirectLink() {
                 "thierry"
             ],
 
+
+        /* BILLON */
 
         "billon-parents":
             [
@@ -2682,9 +2022,12 @@ function openDirectLink() {
     };
 
 
-    if (
-        destinations[hash]
-    ) {
+    /*
+       Vérification du QR code.
+    */
+
+    if (destinations[hash]) {
+
 
         const destination =
             destinations[hash];
@@ -2700,35 +2043,47 @@ function openDirectLink() {
             destination[2];
 
 
+        /*
+           Le scan du QR code découvre
+           TOUTES les photos de l'onglet.
+        */
+
         markPersonDiscovered(
             personId
         );
 
 
-        if (
-            isAlbumComplete()
-        ) {
+        /*
+           Si c'est le dernier QR code,
+           affichage immédiat de la page finale.
+        */
+
+        if (isAlbumComplete()) {
 
             showFinalPage();
 
-        }
-        else {
-
-            showFamily(
-                branchId,
-                familyId,
-                personId
-            );
+            return;
 
         }
 
 
-        return;
+        /*
+           Sinon on ouvre directement
+           la personne concernée.
+        */
+
+        showFamily(
+            branchId,
+            familyId,
+            personId
+        );
+
+
+    } else {
+
+        showHome();
 
     }
-
-
-    showHome();
 
 }
 
@@ -2740,9 +2095,7 @@ function openDirectLink() {
 function imageError(image) {
 
     const fileName =
-        image.getAttribute(
-            "src"
-        );
+        image.getAttribute("src");
 
 
     const div =
@@ -2763,8 +2116,7 @@ function imageError(image) {
                 Photo à ajouter
             </strong>
 
-            <br>
-            <br>
+            <br><br>
 
             ${fileName}
 
@@ -2773,9 +2125,7 @@ function imageError(image) {
     `;
 
 
-    image.replaceWith(
-        div
-    );
+    image.replaceWith(div);
 
 }
 
@@ -2786,8 +2136,8 @@ function imageError(image) {
 
 openDirectLink();
 
+
 </script>
 
 </body>
-
 </html>
