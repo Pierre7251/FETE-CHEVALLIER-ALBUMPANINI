@@ -203,12 +203,7 @@ h2 {
     height: 320px;
     border: none;
     border-radius: 8px;
-
-    background: linear-gradient(
-        135deg,
-        #ddd,
-        #f7f7f7
-    );
+    background: linear-gradient(135deg, #ddd, #f7f7f7);
 
     display: flex;
     align-items: center;
@@ -298,19 +293,16 @@ h2 {
 .qr-message {
     text-align: center;
     margin: 10px auto 20px;
-
     padding: 12px 18px;
 
     max-width: 700px;
 
     border-radius: 10px;
-
     background: white;
 
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 
     color: #555;
-
     font-size: 15px;
 }
 
@@ -320,69 +312,49 @@ h2 {
 ========================= */
 
 .final-page {
-
     max-width: 850px;
-
     margin: 30px auto;
-
     padding: 40px 25px;
 
     background: white;
-
     border-radius: 20px;
 
     text-align: center;
 
-    box-shadow:
-        0 5px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
 }
 
 .final-page .trophy {
-
     font-size: 70px;
-
     margin-bottom: 10px;
 }
 
 .final-page h1 {
-
     font-size: 38px;
-
     margin-bottom: 20px;
 }
 
 .final-text {
-
     font-size: 20px;
-
     line-height: 1.6;
-
     color: #555;
 }
 
 .final-word {
-
     margin: 30px auto 10px;
-
     padding: 25px 20px;
 
     border-radius: 15px;
-
     background: #f4f1ea;
 
     font-size: 30px;
-
     font-weight: bold;
-
     letter-spacing: 1px;
 }
 
 .final-small {
-
     margin-top: 25px;
-
     font-size: 16px;
-
     color: #777;
 }
 
@@ -471,8 +443,7 @@ const PHOTO_FOLDER = "photos/";
    MEMOIRE DES ONGLETS DECOUVERTS
 ============================================================ */
 
-const STORAGE_PREFIX =
-    "chevallier_album_person_";
+const STORAGE_PREFIX = "chevallier_album_person_";
 
 
 /* ============================================================
@@ -480,7 +451,6 @@ const STORAGE_PREFIX =
 ============================================================ */
 
 const album = {
-
 
     /* ========================================================
        PAGE D'ACCUEIL
@@ -513,11 +483,6 @@ const album = {
 
         families: [
 
-
-            /* =========================
-               RAYMONDE
-            ========================= */
-
             {
                 id: "raymonde",
                 name: "Famille RAYMONDE",
@@ -526,25 +491,21 @@ const album = {
 
                     {
                         id: "raymonde-parents",
-                        name: "Raymonde et Robert",
+                        name: "Parents",
 
                         photos: [
-
                             [
                                 "Raymonde et Robert",
                                 "Raymonde-et-Robert.jpg"
                             ]
-
                         ]
                     },
-
 
                     {
                         id: "philippe",
                         name: "Philippe",
 
                         photos: [
-
                             ["Philippe", "Philippe.jpg"],
                             ["Marie-Dominique", "Marie-Dominique.jpg"],
                             ["Pauline", "Pauline.jpg"],
@@ -560,30 +521,22 @@ const album = {
                             ["Benjamin", "Benjamin.jpg"],
                             ["Louise", "Louise.jpg"],
                             ["Thibault", "Thibault.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "helene",
                         name: "Hélène",
 
                         photos: [
-
                             ["Hélène", "Helene.jpg"],
                             ["Corinne", "Corinne.jpg"]
-
                         ]
                     }
 
                 ]
             },
 
-
-            /* =========================
-               JACQUELINE
-            ========================= */
 
             {
                 id: "jacqueline",
@@ -596,23 +549,19 @@ const album = {
                         name: "Dominique",
 
                         photos: [
-
                             ["Dominique et Josette", "Dominique.jpg"],
                             ["Sébastien", "Sebastien.jpg"],
                             ["Delphine", "Delphine.jpg"],
                             ["Maëlle", "Maelle.jpg"],
                             ["Julie", "Julie.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "beatrice",
                         name: "Béatrice",
 
                         photos: [
-
                             ["Béatrice", "Beatrice.jpg"],
                             ["Amélie et Lothaire", "Amelie.jpg"],
                             ["Enfants Amélie", "Enfants Amelie.jpg"],
@@ -623,42 +572,26 @@ const album = {
                             ["Simon", "Simon.jpg"],
                             ["Enfants Emmanuelle", "Enfants Emmanuelle.jpg"],
                             ["Elise et sa famille", "Elise et sa famille.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "sylvain",
                         name: "Sylvain",
 
                         photos: [
-
-                            [
-                                "Sylvain et Chantal",
-                                "Sylvain-et-Chantal.jpg"
-                            ],
-
+                            ["Sylvain et Chantal", "Sylvain-et-Chantal.jpg"],
                             [
                                 "Charline Simeo Camille Noam Lilou Julien",
                                 "Charline-Simeo-Camille-Noam-Lilou-Julien.jpg"
                             ],
-
-                            [
-                                "Pierre et Corentin",
-                                "Pierre-et-Corentin.jpg"
-                            ]
-
+                            ["Pierre et Corentin", "Pierre-et-Corentin.jpg"]
                         ]
                     }
 
                 ]
             },
 
-
-            /* =========================
-               COLETTE
-            ========================= */
 
             {
                 id: "colette",
@@ -671,35 +604,28 @@ const album = {
                         name: "Colette",
 
                         photos: [
-
                             ["Colette", "Colette.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "bruno",
                         name: "Bruno",
 
                         photos: [
-
                             ["Bruno", "Bruno.jpg"],
                             ["Marie", "Marie-Bruno.jpg"],
                             ["Victoria", "Victoria.jpg"],
                             ["Bilal", "Bilal.jpg"],
                             ["Isac", "Isac.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "catherine",
                         name: "Catherine",
 
                         photos: [
-
                             ["Catherine", "Catherine.jpg"],
                             ["Christian", "Christian.jpg"],
                             ["Julie", "Julie Chevallier.jpg"],
@@ -707,62 +633,50 @@ const album = {
                             ["Léa", "Lea.jpg"],
                             ["Robin", "Robin.jpg"],
                             ["Charles", "Charles.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "francois",
                         name: "François",
 
                         photos: [
-
                             ["François", "François.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "martine",
                         name: "Martine",
 
                         photos: [
-
                             ["Martine", "Martine.jpg"],
                             ["Achille", "Achille.jpg"],
                             ["Noemie", "Noemie.jpg"],
                             ["Prune", "Prune.jpg"],
                             ["Tim", "Tim.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "fabienne",
                         name: "Fabienne",
 
                         photos: [
-
                             ["Fabienne", "Fabienne.jpg"],
                             ["Philippe", "Philippe – Fabienne.jpg"],
                             ["Valentin", "Valentin.jpg"],
                             ["Margaux", "Margaux.jpg"],
                             ["Xavier", "Xavier.jpg"],
                             ["Alma", "Alma.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "laurent",
                         name: "Laurent",
 
                         photos: [
-
                             ["Laurent", "Laurent.jpg"],
                             ["Chrystel", "Chrystel.jpg"],
                             ["Charlotte", "Charlotte – Laurent.jpg"],
@@ -770,17 +684,12 @@ const album = {
                             ["Gabrielle", "Gabrielle.jpg"],
                             ["Simon", "Simon – Gabrielle.jpg"],
                             ["Arthur", "Arthur.jpg"]
-
                         ]
                     }
 
                 ]
             },
 
-
-            /* =========================
-               MARIE-CLAUDE
-            ========================= */
 
             {
                 id: "marie-claude",
@@ -790,16 +699,13 @@ const album = {
 
                     {
                         id: "marie-claude-parents",
-                        name: "Marie-Claude et Joseph",
+                        name: "Parents",
 
                         photos: [
-
                             ["Marie-Claude", "Marie-Claude.jpg"],
                             ["Joseph", "Joseph.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "cyril",
@@ -807,73 +713,83 @@ const album = {
 
                         photos: [
 
+                            /* 1 */
                             ["Cyril", "Cyril.jpg"],
+
+                            /* 2 */
                             ["Angélique", "Angelique.jpg"],
+
+                            /* 3 */
                             ["Héloïse", "Heloise.jpg"],
+
+                            /* 4 */
                             ["Antoine", "Antoine-Heloise.jpg"],
+
+                            /* 5 */
                             ["Timeo", "Timeo.jpg"],
+
+                            /* 6 */
                             ["Aurelien", "Aurelien.jpg"],
+
+                            /* 7 */
                             ["Manon", "Manon.jpg"],
+
+                            /* 8 */
+                            ["Emilie", "Emilie.jpg"],
+
+                            /* 9 */
+                            ["Alexandre", "Alexandre.jpg"],
+
+                            /* 10 */
                             ["Antoine", "Antoine.jpg"],
+
+                            /* 11 */
                             ["Lily Rose", "Lily-Rose.jpg"]
 
                         ]
                     },
-
 
                     {
                         id: "julien",
                         name: "Julien",
 
                         photos: [
-
                             ["Julien", "Julien.jpg"],
                             ["Marlène", "Marlene.jpg"],
                             ["Jules", "Jules.jpg"],
                             ["Adèle", "Adele.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "maxime",
                         name: "Maxime",
 
                         photos: [
-
                             ["Maxime", "Maxime.jpg"],
                             ["Audrey", "Audrey.jpg"],
                             ["Alice", "Alice.jpg"],
                             ["Justine", "Justine.jpg"],
                             ["Léonore", "Leonore.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "baptiste",
                         name: "Baptiste",
 
                         photos: [
-
                             ["Baptiste", "Baptiste.jpg"],
                             ["Aurore", "Aurore.jpg"],
                             ["Soline", "Soline.jpg"],
                             ["Marceau", "Marceau.jpg"],
                             ["Romane", "Romane.jpg"]
-
                         ]
                     }
 
                 ]
             },
 
-
-            /* =========================
-               JEAN
-            ========================= */
 
             {
                 id: "jean",
@@ -883,38 +799,31 @@ const album = {
 
                     {
                         id: "jean-parents",
-                        name: "Jean et Sylviane",
+                        name: "Parents",
 
                         photos: [
-
                             ["Jean", "Jean.jpg"],
                             ["Sylviane", "Sylviane.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "anne",
                         name: "Anne",
 
                         photos: [
-
                             ["Anne", "Anne.jpg"],
                             ["Valérie", "Valerie.jpg"],
                             ["Léopold", "Leopold.jpg"],
                             ["Joséphine", "Josephine.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "marie",
                         name: "Marie",
 
                         photos: [
-
                             ["Marie", "Marie.jpg"],
                             ["Coralie", "Coralie.jpg"],
                             ["Jean", "Jean-familleMarie.jpg"],
@@ -924,39 +833,32 @@ const album = {
                             ["Paulin", "Paulin.jpg"],
                             ["Adam", "Adam.jpg"],
                             ["Clara", "Clara.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "pierre-francois",
                         name: "Pierre-François",
 
                         photos: [
-
                             ["Pierre-François", "Pierre-Francois.jpg"],
                             ["Alexandra", "Alexandra.jpg"],
                             ["Camille", "Camille.jpg"],
                             ["Candice", "Candice.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "jean-charles",
                         name: "Jean-Charles",
 
                         photos: [
-
                             ["Jean-Charles", "Jean-Charles.jpg"],
                             ["Aude", "Aude.jpg"],
                             ["Bixente", "Bixente.jpg"],
                             ["Louca", "Louca.jpg"],
                             ["Gabin", "Gabin.jpg"],
                             ["Charlie", "Charlie.jpg"]
-
                         ]
                     }
 
@@ -977,11 +879,6 @@ const album = {
 
         families: [
 
-
-            /* =========================
-               BOUVIER
-            ========================= */
-
             {
                 id: "bouvier",
                 name: "Famille BOUVIER",
@@ -990,46 +887,29 @@ const album = {
 
                     {
                         id: "bouvier-parents",
-                        name: "Jeanine et Louis",
+                        name: "Parents",
 
                         photos: [
-
                             ["Jeanine", "Jeanine.jpg"],
                             ["Louis", "Louis.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "thierry",
                         name: "Thierry",
 
                         photos: [
-
                             ["Thierry", "Thierry.jpg"],
                             ["Valérie", "Valerie-Thierry.jpg"],
-
-                            /*
-                               IMPORTANT :
-                               Le nom affiché est Pauline.
-                               Le fichier utilisé est Pauline-Bouvier.jpg.
-                            */
-
                             ["Pauline", "Pauline-Bouvier.jpg"],
-
                             ["Victor", "Victor.jpg"]
-
                         ]
                     }
 
                 ]
             },
 
-
-            /* =========================
-               BILLON
-            ========================= */
 
             {
                 id: "billon",
@@ -1039,40 +919,32 @@ const album = {
 
                     {
                         id: "billon-parents",
-                        name: "Marie-France et Jean-Claude",
+                        name: "Parents",
 
                         photos: [
-
                             ["Marie-France", "Marie-France.jpg"],
                             ["Jean-Claude", "Jean-Claude.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "sophie",
                         name: "Sophie",
 
                         photos: [
-
                             ["Sophie", "Sophie.jpg"],
                             ["Frédéric", "Frederic.jpg"],
                             ["Margot", "Margot.jpg"],
                             ["Paul", "Paul.jpg"]
-
                         ]
                     },
-
 
                     {
                         id: "charlotte",
                         name: "Charlotte",
 
                         photos: [
-
                             ["Charlotte", "Charlotte.jpg"]
-
                         ]
                     }
 
@@ -1186,7 +1058,6 @@ function showFinalPage() {
                 ALBUM COMPLET !
             </h1>
 
-
             <div class="final-text">
 
                 <p>
@@ -1215,27 +1086,17 @@ function showFinalPage() {
 
             </div>
 
-
             <div class="final-word">
 
                 🎉 VIVE VALLON-SUR-GÉE ! 🎉
 
             </div>
 
-
             <div class="final-small">
 
                 Bravo et merci d'avoir participé ! 📸
 
             </div>
-
-
-            <!-- =========================================
-                 IMPORTANT :
-                 forceHome = true permet de revenir
-                 à la première page même si l'album
-                 est complètement découvert.
-            ========================================== -->
 
             <button
                 class="back-button"
@@ -1262,17 +1123,7 @@ function showFinalPage() {
    ACCUEIL
 ============================================================ */
 
-/*
-   forceHome = false :
-   comportement normal.
-
-   forceHome = true :
-   permet de revenir à l'accueil même lorsque
-   les 28 QR codes ont été découverts.
-*/
-
 function showHome(forceHome = false) {
-
 
     if (
         !forceHome &&
@@ -1296,9 +1147,7 @@ function showHome(forceHome = false) {
             Fête Chevallier 2026
         </div>
 
-
         <div class="home-families">
-
 
             <div
                 class="home-card"
@@ -1336,7 +1185,6 @@ function showHome(forceHome = false) {
                 </h2>
 
             </div>
-
 
         </div>
 
@@ -1407,12 +1255,7 @@ function showFamilyList(branchId) {
     });
 
 
-    html += `
-
-        </div>
-
-    `;
-
+    html += `</div>`;
 
     app.innerHTML = html;
 
@@ -1469,11 +1312,9 @@ function showFamily(
 
         </button>
 
-
         <h1>
             ${family.name}
         </h1>
-
 
         <div class="navigation">
 
@@ -1640,112 +1481,87 @@ function showPerson(
     }
 
 
-    html += `
-
-        <div class="photos">
-
-    `;
+    html += `<div class="photos">`;
 
 
     person.photos.forEach(
         (photo, index) => {
 
+            if (discovered) {
 
-        if (discovered) {
+                html += `
 
+                    <div class="photo-card">
 
-            html += `
-
-                <div class="photo-card">
-
-                    <img
-                        class="revealed-image"
-                        src="${PHOTO_FOLDER}${photo[1]}"
-                        alt="${photo[0]}"
-                        draggable="false"
-                        onerror="imageError(this)"
-                    >
-
-                    <div class="photo-name">
-
-                        ${index + 1}.
-                        ${photo[0]}
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-        } else {
-
-
-            html += `
-
-                <div class="photo-card">
-
-                    <div
-                        class="discover-card"
-                    >
-
-                        <div
-                            class="discover-inner"
+                        <img
+                            class="revealed-image"
+                            src="${PHOTO_FOLDER}${photo[1]}"
+                            alt="${photo[0]}"
+                            draggable="false"
+                            onerror="imageError(this)"
                         >
 
-                            <div
-                                class="discover-icon"
-                            >
-                                🔒
-                            </div>
+                        <div class="photo-name">
 
-                            <div
-                                class="discover-text"
-                            >
-                                Photo à découvrir
-                            </div>
+                            ${index + 1}.
+                            ${photo[0]}
 
                         </div>
 
                     </div>
 
+                `;
 
-                    <div class="photo-name">
+            } else {
 
-                        ${index + 1}.
-                        ${photo[0]}
+                html += `
+
+                    <div class="photo-card">
+
+                        <div class="discover-card">
+
+                            <div class="discover-inner">
+
+                                <div class="discover-icon">
+                                    🔒
+                                </div>
+
+                                <div class="discover-text">
+                                    Photo à découvrir
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="photo-name">
+
+                            ${index + 1}.
+                            ${photo[0]}
+
+                        </div>
 
                     </div>
 
-                </div>
+                `;
 
-            `;
+            }
 
         }
+    );
 
 
-    });
-
-
-    html += `
-
-        </div>
-
-    `;
+    html += `</div>`;
 
 
     content.innerHTML = html;
 
 
-    /* Onglet actif */
-
     document
         .querySelectorAll(".tab")
         .forEach(button => {
 
-            button.classList.remove(
-                "active"
-            );
+            button.classList.remove("active");
 
         });
 
@@ -1758,9 +1574,7 @@ function showPerson(
 
     if (activeTab) {
 
-        activeTab.classList.add(
-            "active"
-        );
+        activeTab.classList.add("active");
 
     }
 
@@ -1777,11 +1591,6 @@ function openDirectLink() {
         window.location.hash.substring(1);
 
 
-    /*
-       Pas de QR code :
-       ouverture normale de l'accueil.
-    */
-
     if (!hash) {
 
         showHome();
@@ -1791,17 +1600,7 @@ function openDirectLink() {
     }
 
 
-    /*
-       Les 28 QR codes utilisent les identifiants
-       ci-dessous.
-
-       IMPORTANT :
-       Un QR code = une personne = TOUTES
-       les photos de son onglet.
-    */
-
     const destinations = {
-
 
         /* RAYMONDE */
 
@@ -2022,12 +1821,7 @@ function openDirectLink() {
     };
 
 
-    /*
-       Vérification du QR code.
-    */
-
     if (destinations[hash]) {
-
 
         const destination =
             destinations[hash];
@@ -2044,8 +1838,8 @@ function openDirectLink() {
 
 
         /*
-           Le scan du QR code découvre
-           TOUTES les photos de l'onglet.
+           Le QR code découvre toute
+           la personne / tout l'onglet.
         */
 
         markPersonDiscovered(
@@ -2054,8 +1848,9 @@ function openDirectLink() {
 
 
         /*
-           Si c'est le dernier QR code,
-           affichage immédiat de la page finale.
+           Si toutes les personnes sont
+           maintenant découvertes :
+           affichage de la page finale.
         */
 
         if (isAlbumComplete()) {
@@ -2066,11 +1861,6 @@ function openDirectLink() {
 
         }
 
-
-        /*
-           Sinon on ouvre directement
-           la personne concernée.
-        */
 
         showFamily(
             branchId,
